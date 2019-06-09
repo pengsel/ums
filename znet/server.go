@@ -3,11 +3,11 @@ package znet
 import (
 	"fmt"
 	"net"
-	"zinx/utils"
-	"zinx/ziface"
+	"ums/utils"
+	"ums/ziface"
 )
 
-var zinx_logo = `                                        
+var ums_logo = `                                        
               ██                        
               ▀▀                        
  ████████   ████     ██▄████▄  ▀██  ██▀ 
@@ -81,9 +81,9 @@ func (s *Server) Start() {
 		}
 
 		//已经监听成功
-		fmt.Println("start Zinx server  ", s.Name, " succ, now listenning...")
+		fmt.Println("start ums server  ", s.Name, " succ, now listenning...")
 
-		//TODO server.go 应该有一个自动生成ID的方法
+		//TODO tcpserver.go 应该有一个自动生成ID的方法
 		var cid uint32
 		cid = 0
 
@@ -115,7 +115,7 @@ func (s *Server) Start() {
 
 //停止服务
 func (s *Server) Stop() {
-	fmt.Println("[STOP] Zinx server , name " , s.Name)
+	fmt.Println("[STOP] ums server , name " , s.Name)
 
 	//将其他需要清理的连接信息或者其他信息 也要一并停止或者清理
 	s.ConnMgr.ClearConn()
@@ -168,12 +168,7 @@ func (s *Server) CallOnConnStop(conn ziface.IConnection) {
 }
 
 func init() {
-	fmt.Println(zinx_logo)
-	fmt.Println(top_line)
-	fmt.Println(fmt.Sprintf("%s [Github] https://github.com/aceld                 %s", border_line, border_line))
-	fmt.Println(fmt.Sprintf("%s [tutorial] https://www.jianshu.com/p/23d07c0a28e5 %s", border_line, border_line))
-	fmt.Println(bottom_line)
-	fmt.Printf("[Zinx] Version: %s, MaxConn: %d, MaxPacketSize: %d\n",
+	fmt.Printf("[ums] Version: %s, MaxConn: %d, MaxPacketSize: %d\n",
 		utils.GlobalObject.Version,
 		utils.GlobalObject.MaxConn,
 		utils.GlobalObject.MaxPacketSize)

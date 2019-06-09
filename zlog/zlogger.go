@@ -25,8 +25,8 @@ const (
 	BitDate         = 1 << iota                            //日期标记位  2019/01/23
 	BitTime                                                //时间标记位  01:23:12
 	BitMicroSeconds                                        //微秒级标记位 01:23:12.111222
-	BitLongFile                                            // 完整文件名称 /home/go/src/zinx/server.go
-	BitShortFile                                           // 最后文件名   server.go
+	BitLongFile                                            // 完整文件名称 /home/go/src/zinx/tcpserver.go
+	BitShortFile                                           // 最后文件名   tcpserver.go
 	BitLevel                                               // 当前日志级别： 0(Debug), 1(Info), 2(Warn), 3(Error), 4(Panic), 5(Fatal)
 	BitStdFlag      = BitDate | BitTime                    //标准头部日志格式
 	BitDefault      = BitLevel | BitShortFile | BitStdFlag //默认日志头部格式

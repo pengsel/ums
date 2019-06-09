@@ -3,8 +3,8 @@ package znet
 import (
 	"fmt"
 	"strconv"
-	"zinx/utils"
-	"zinx/ziface"
+	"ums/utils"
+	"ums/ziface"
 )
 
 type MsgHandle struct {

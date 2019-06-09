@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"encoding/binary"
 	"errors"
-	"zinx/utils"
-	"zinx/ziface"
+	"ums/utils"
+	"ums/ziface"
 )
 
 //封包拆包类实例，暂时不需要成员

@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"sync"
-	"zinx/ziface"
+	"ums/ziface"
 )
 
 /*

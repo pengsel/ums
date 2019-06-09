@@ -5,7 +5,7 @@ import (
 	"net"
 	"testing"
 	"time"
-	"zinx/ziface"
+	"ums/ziface"
 )
 
 /*
@@ -24,7 +24,7 @@ func ClientTest() {
 	}
 
 	for {
-		_, err := conn.Write([]byte("Zinx V0.2 test"))
+		_, err := conn.Write([]byte("ums V0.2 test"))
 		if err != nil {
 			fmt.Println("write error err ", err)
 			return
@@ -50,7 +50,7 @@ func TestServer(t *testing.T) {
 
 	//	服务端测试
 	//1 创建一个server 句柄 s
-	s := NewServer("[zinx V0.1]")
+	s := NewServer("[ums V0.1]")
 
 	//	客户端测试
 	go ClientTest()
@@ -93,11 +93,12 @@ func (this *PingRouter) PostHandle(request ziface.IRequest) {
 	}
 }
 
+
 func TestServerV0_3(t *testing.T) {
 	//创建一个server句柄
 	s := NewServer()
 
-	s.AddRouter(&PingRouter{})
+	s.AddRouter(0,&PingRouter{})
 
 	//	客户端测试
 	go ClientTest()
